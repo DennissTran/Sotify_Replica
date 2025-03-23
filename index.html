@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<!-- Title -->
+
+	<div class="Heading">
+		<img class="heading-icon" src="https://www.scdn.co/i/_global/twitter_card-default.jpg">
+		<h1 class="heading-title">
+			Các bài hát đã lưu
+		</h1>
+	</div>
+
+	<!-- List songs-->
+	<div id = "playlist">
+		<div class="playlist-header">
+			<p># Tiêu đề</p>
+			<p>Thời gian</p>
+		</div>
+
+		<!-- songs-->
+		<div id="song-list">
+			<div class="song" onclick="playAudio('Thằng Điên')">
+				<p class="song-id">1</p>
+				<img class="song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1b7XF-Is7LOnmzqvH5J4ZKt6GtesHoQAjRQ&s">
+				<div class="song-info">
+					<p class="song-title">Thằng Điên</p>
+					<p class="artist">Justatee, Phương Ly</p>
+					
+				</div>
+				<p class="song-duration">3:54</p>
+				
+			</div>
+
+			<div class="song" onclick="playAudio('vaicaunoicokhiennguoithaydoi')">
+				<p class="song-id">2</p>
+				<img class="song-img" src="https://pbs.twimg.com/media/FVYMsiiVsAMxMEc?format=jpg&name=large">
+				<div class="song-info">
+					<p class="song-title">vaicaunoicokhiennguoithaydoi</p>
+					<p class="artist">Grey D, Tlinh</p>
+					
+				</div>
+				<p class="song-duration">2:54</p>
+				
+			</div>
+
+			<div class="song" onclick="playAudio('Every Time')">
+				<p class="song-id">3</p>
+				<img class="song-img" src="https://i.scdn.co/image/ab67616d0000b27352b4a39a68f595936012712e">
+				<div class="song-info">
+					<p class="song-title">Every Time</p>
+					<p class="artist">CHEN, Punch</p>
+					
+				</div>
+				<p class="song-duration">3:09</p>
+			</div>
+
+			<div class="song" onclick="playAudio('Có Em')">
+				<p class="song-id">4</p>
+				<img class="song-img" src="https://photo-resize-zmp3.zmdcdn.me/w256_r1x1_jpeg/cover/b/e/3/c/be3c44f7bb2d76e510905b218499d408.jpg">
+				<div class="song-info">
+					<p class="song-title">Có Em</p>
+					<p class="artist">Madihu, Low G</p>
+					
+				</div>
+				<p class="song-duration">3:38</p>
+			</div>
+
+			<div class="song" onclick="playAudio('Ngày Tận Thế')">
+				<p class="song-id">5</p>
+				<img class="song-img" src="https://photo-resize-zmp3.zadn.vn/w600_r1x1_jpeg/cover/3/f/8/9/3f89f6264a35d6d890e9fa3fdf160948.jpg">
+				<div class="song-info">
+					<p class="song-title">Ngày Tận Thế</p>
+					<p class="artist">Madihu, Low G</p>
+					
+				</div>
+				<p class="song-duration">3:52</p>
+			</div>
+
+			<div class="song" onclick="playAudio('Tình Đắng Như Ly Cà Phê')">
+				<p class="song-id">6</p>
+				<img class="song-img" src="https://i.scdn.co/image/ab67616d0000b273e8dac23cef88f3ff801a083d">
+				<div class="song-info">
+					<p class="song-title">Tình Đắng Như Ly Cà Phê</p>
+					<p class="artist">Ngơ, Nân</p>
+					
+				</div>
+				<p class="song-duration">3:35</p>
+			</div>
+
+			<div class="song" onclick="playAudio('Ánh Sao Và Bầu Trời')">
+				<p class="song-id">7</p>
+				<img class="song-img" src="https://i.scdn.co/image/ab67616d0000b273212f0300aefcb79b00d2a6cf">
+				<div class="song-info">
+					<p class="song-title">Ánh Sao Và Bầu Trời</p>
+					<p class="artist">T.R.I</p>
+					
+				</div>
+				<p class="song-duration">4:20</p>
+			</div>
+
+			<div class="song" onclick="playAudio('There\'s Nothing Holdin Me Back')">
+				<p class="song-id">8</p>
+				<img class="song-img" src="https://i.scdn.co/image/ab67616d0000b273ea3ef7697cfd5705b8f47521">
+				<div class="song-info">
+					<p class="song-title">There's Nothing Holdin Me Back</p>
+					<p class="artist">Shawn Mendes</p>
+					
+				</div>
+				<p class="song-duration">3:19</p>
+			</div>
+		</div>
+
+
+	</div>
+
+	<!-- Shuffle button-->
+	<div class="shuffle-button" onclick="shuffleSongs()">
+		<p> Shuffle </p>
+	</div>
+
+	<!-- Taskbar -->
+	<div id="taskbar">
+		<img id="taskbar-img" src="" alt="Song image">
+		<div class="taskbar-info">
+			<p id="taskbar-title"></p>
+			<p id="taskbar-artist"></p>
+		</div>
+
+		<div class="taskbar-button">
+			<button class="btn" id="prev-btn" onclick="gotoPreviousSong()">
+				<img class="taskbar-image" src="https://www.clker.com/cliparts/a/2/b/4/11949856162121572095pulsante_04_architetto_f_01.svg.med.png">
+			</button>
+
+			<button class="btn" id="play-btn" onclick="changeStateCurrentSong()">
+				<img class="taskbar-image" src="https://www.clker.com/cliparts/P/B/P/j/q/O/pause-button-md.png">
+			</button>
+
+			<button class="btn" id="next-btn" onclick="gotoNextSong()">
+				<img class="taskbar-image" src="https://www.clker.com/cliparts/1/f/a/2/1349807104707654381Next%20Button.svg.med.png">
+			</button>
+		</div>
+		<input type="range" id="seek-bar" value="0">
+		<span id="current-time">0:00</span> /<span id="total-time">0:00</span>
+		<audio id="audio-player" src=""></audio>
+	</div>
+
+	<!-- Java Script!-->
+	<script>
+		let audio = document.getElementById("audio-player");
+		let songs = Array.from(document.querySelectorAll(".song"));
+		let currentindexSong = -1;
+		const seekBar = document.getElementById("seek-bar");
+		const totalTime = document.getElementById("total-time");
+		const currentTime = document.getElementById("current-time");
+
+		function changeStateCurrentSong() {
+			let button = document.getElementById("play-btn");
+			if (audio.paused) {
+				audio.play();
+				button.querySelector(".taskbar-image").src = "https://www.clker.com/cliparts/P/B/P/j/q/O/pause-button-md.png";
+			} else {
+				audio.pause();
+				button.querySelector(".taskbar-image").src = "https://www.clker.com/cliparts/0/5/e/d/1194985614534001410pulsante_02_architetto_f_01.svg.med.png";
+			}
+		}
+
+		function gotoNextSong() {
+			if (currentindexSong + 1 < songs.length) {
+				playSong(songs[currentindexSong + 1]);
+			} else {
+				playSong(songs[0]);
+			}
+		}
+
+		function gotoPreviousSong() {
+			if (currentindexSong > 0) {
+				playSong(songs[currentindexSong - 1]);
+			} else {
+				playSong(songs[songs.length - 1]);
+			}
+		}
+
+		audio.addEventListener("timeupdate", () => {
+                seekBar.value = (audio.currentTime / audio.duration) * 100;
+                currentTime.textContent = formatTime(audio.currentTime);
+                totalTime.textContent = formatTime(audio.duration);
+
+                if (seekBar.value == 100) {
+                	gotoNextSong();
+                }
+            });
+
+        seekBar.addEventListener("input", () => {
+            audio.currentTime = (seekBar.value / 100) * audio.duration;
+        });
+
+        function formatTime(seconds) {
+            let min = Math.floor(seconds / 60);
+            let sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+        }
+
+		function formatLink(title) {
+		    return `Songs/${title}.mp3`;
+		}
+
+		function playSong(song) {
+			let button = document.getElementById("play-btn");
+			button.querySelector(".taskbar-image").src = "https://www.clker.com/cliparts/P/B/P/j/q/O/pause-button-md.png";
+			let artist = song.querySelector(".artist").innerHTML;
+			
+			let image = song.querySelector(".song-img").src;
+
+			let title = song.querySelector(".song-title").innerHTML;
+
+			let file = formatLink(title);
+
+			document.getElementById("taskbar-img").src = image;
+
+			document.getElementById("taskbar-artist").innerHTML = artist;
+			document.getElementById("taskbar-title").innerHTML = title;
+			document.getElementById("audio-player").src = file;
+			if (audio != null) audio.pause();
+			audio = document.getElementById("audio-player");
+			audio.currentTime = 0;
+			audio.play();
+			document.getElementById("taskbar").style.bottom = "20px";
+
+			if (currentindexSong != -1) {
+				songs[currentindexSong].classList.remove("song-active");
+			}
+
+			currentindexSong = song.querySelector(".song-id").innerHTML - 1;
+			songs[currentindexSong].classList.add("song-active");
+		}
+
+		function playAudio(title) {
+			let clickSound = new Audio("Songs/mouseClick.mp3");
+			clickSound.currentTime = 0;
+			clickSound.play();
+
+			songs.forEach(song => {
+				let id = song.querySelector(".song-title");
+				
+				if (id && id.innerHTML.trim() == title) {
+					playSong(song);
+				}
+			})
+		}
+
+		function shuffleSongs() {
+			let clickSound = new Audio("Songs/mouseClick.mp3");
+			clickSound.currentTime = 0;
+			clickSound.play();
+			for (let i = songs.length - 1; i > 0; i--) {
+				let j = Math.floor(Math.random() * (i + 1));
+				[songs[i], songs[j]] = [songs[j], songs[i]];
+			}
+
+			for (let i = 0; i < songs.length; i++) {
+				if (songs[i].querySelector(".song-id").innerHTML - 1 == currentindexSong) currentindexSong = i;
+				songs[i].querySelector(".song-id").innerHTML = i + 1;
+			}
+			let list = document.getElementById("song-list");
+			list.innerHTML = "";
+			songs.forEach(song => list.append(song));
+		}
+	</script>
+</body>
+</html>

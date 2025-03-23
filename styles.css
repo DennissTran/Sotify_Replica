@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap');
+
+body{
+	background: linear-gradient(lightslategrey, black);
+	color: white;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: 'Manrope', sans-serif;
+}
+
+.Heading{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.1vw;
+}
+
+.heading-title{
+	font-size: 4.5vw;
+	-webkit-text-stroke: 0.15vw white;
+	padding: 20px;
+}
+
+.heading-icon{
+	width: 10vw;
+	height: 9vw;
+	border-radius: 20%;
+}
+
+.playlist{
+	margin: 20px auto;
+}
+
+.playlist-header{
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 15px;
+	font-weight: bold;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+	gap: 300px;
+}
+
+.song{
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 15px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.song img{
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+	margin: 0 15px;
+}
+
+.song-info{
+	flex-grow: 1;
+}
+
+.song-title{
+	font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.artist{
+	font-size: 0.9em;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.duration{
+	text-align: right;
+}
+
+.song:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.shuffle-button{
+	position: fixed;
+	bottom: 5px;
+	background: #1db954;
+	border-radius: 50%;
+	color: black;
+	cursor: pointer;
+	padding: 7px 7px;
+	font-size: 17px;
+	margin: 10px;
+}
+
+#taskbar{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	bottom: -1000px;
+	left: 120px;
+	gap: 20px;
+	background: black;
+}
+
+.btn{
+	width: 50px; /* Điều chỉnh theo kích thước mong muốn */
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Nếu muốn làm ảnh tròn */
+}
+
+.taskbar-button{
+	display: flex;
+	background: black;
+	gap: 10px;
+}
+
+.taskbar-image{
+	width: 50px;
+	height: 50px;
+	background: black;
+	border-radius: 50%;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+.btn:hover{
+	background: #1DB954; /* Màu xanh Spotify */
+    color: white;
+    transform: scale(1.1);
+    border-radius: 50%;
+}
+
+#taskbar-img{
+	display: flex;
+	width: 100px;
+	height: 100px;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#taskbar-title, #taskbar-artist {
+    white-space: nowrap;       /* Không xuống dòng */
+    overflow: hidden;          /* Ẩn phần dư thừa */
+    text-overflow: ellipsis;   /* Hiển thị "..." nếu bị cắt */
+    max-width: 100%;           /* Giới hạn chiều rộng */
+}
+
+.shuffle-button:hover{
+	background: #1DB954; /* Màu xanh Spotify */
+    color: white;
+    transform: scale(1.1);
+    border-radius: 50%;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+}
+
+.shuffle-button:active {
+    transform: scale(0.7); /* Nút thu nhỏ lại khi bấm */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Hiệu ứng nhấn */
+}
+
+.song-active{
+	color: green;
+	transform: scale(1.05);
+}
+
+
