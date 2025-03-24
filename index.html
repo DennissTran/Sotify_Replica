@@ -188,14 +188,14 @@
 		}
 
 		audio.addEventListener("timeupdate", () => {
-                seekBar.value = (audio.currentTime / audio.duration) * 100;
-                currentTime.textContent = formatTime(audio.currentTime);
-                totalTime.textContent = formatTime(audio.duration);
+            seekBar.value = (audio.currentTime / audio.duration) * 100;
+            currentTime.textContent = formatTime(audio.currentTime);
+            totalTime.textContent = formatTime(audio.duration);
 
-                if (seekBar.value == 100) {
-                	gotoNextSong();
-                }
-            });
+            if (seekBar.value == 100) {
+                gotoNextSong();
+            }
+        });
 
         seekBar.addEventListener("input", () => {
             audio.currentTime = (seekBar.value / 100) * audio.duration;
@@ -215,15 +215,11 @@
 			let button = document.getElementById("play-btn");
 			button.querySelector(".taskbar-image").src = "https://www.clker.com/cliparts/P/B/P/j/q/O/pause-button-md.png";
 			let artist = song.querySelector(".artist").innerHTML;
-			
 			let image = song.querySelector(".song-img").src;
-
 			let title = song.querySelector(".song-title").innerHTML;
-
 			let file = formatLink(title);
 
 			document.getElementById("taskbar-img").src = image;
-
 			document.getElementById("taskbar-artist").innerHTML = artist;
 			document.getElementById("taskbar-title").innerHTML = title;
 			document.getElementById("audio-player").src = file;
@@ -265,9 +261,17 @@
 			}
 
 			for (let i = 0; i < songs.length; i++) {
-				if (songs[i].querySelector(".song-id").innerHTML - 1 == currentindexSong) currentindexSong = i;
+				if (songs[i].querySelector(".song-id").innerHTML - 1 == currentindexSong) {
+					currentindexSong = i;
+					break;
+				}
+			}
+
+			for (let i = 0; i < songs.length; i++) {
+				
 				songs[i].querySelector(".song-id").innerHTML = i + 1;
 			}
+			console.log("bla " + currentindexSong);
 			let list = document.getElementById("song-list");
 			list.innerHTML = "";
 			songs.forEach(song => list.append(song));
